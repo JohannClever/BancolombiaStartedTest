@@ -1,0 +1,25 @@
+<div class="col-xl-12 order-xl-1">
+  <div class="row">
+    <div class="col-xl-12 order-xl-1">
+      <div class="card bg-secondary shadow">
+        <div class="card-body p-2">
+          <div role="form">
+            <h6 class="heading-small text-muted mb-2 text-center">Filtros de Búsqueda</h6> <!-- Texto centrado -->
+            <div class="row align-items-center">
+              <div class="col-lg-8">
+                <div class="form-group mb-2">
+                  <label class="form-control-label" for="searchWord">Palabra de búsqueda</label>
+                  <input id="searchWord" type="text" class="form-control" [(ngModel)]="searchWord" placeholder="Buscar proyecto">
+                </div>
+              </div>
+              <div class="col-lg-4 text-right">
+                <button type="button" class="btn btn-clean mr-2" (click)="clean()">Limpiar</button>
+                <button type="button" class="btn btn-search" (click)="search()">Buscar</button>
+              </div>
+            </div>            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>    
+</div>

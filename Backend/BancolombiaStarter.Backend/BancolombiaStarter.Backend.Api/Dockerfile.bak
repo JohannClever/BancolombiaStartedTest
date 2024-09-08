@@ -1,0 +1,44 @@
+# Utiliza la imagen base de ASP.NET Core
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+WORKDIR /app
+EXPOSE 54615
+EXPOSE 44398
+
+# Utiliza la imagen del SDK de .NET Core para construir la aplicación
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /src
+COPY ["./BancolombiaStarter.Backend.Api/BancolombiaStarter.Backend.Api.csproj", "BancolombiaStarter.Backend.Api/"]
+COPY ["./BancolombiaStarter.Backend.Infrastructure/BancolombiaStarter.Backend.Infrastructure.csproj", "BancolombiaStarter.Backend.Infrastructure/"]
+COPY ["./BancolombiaStarter.Backend.Domain/BancolombiaStarter.Backend.Domain.csproj", "BancolombiaStarter.Backend.Domain/"]
+COPY ["./BancolombiaStarter.Backend.Db/BancolombiaStarter.Backend.Db.sqlproj", "BancolombiaStarter.Backend.Db/"]
+
+RUN dotnet restore "BancolombiaStarter.Backend.Api/BancolombiaStarter.Backend.Api.csproj"
+COPY . .
+WORKDIR "/src/BancolombiaStarter.Backend.Api"
+RUN dotnet build "BancolombiaStarter.Backend.Api.csproj" -c Release -o /app/build
+
+# Publica la aplicación
+FROM build AS publish
+RUN dotnet publish "BancolombiaStarter.Backend.Api.csproj" -c Release -o /app/publish
+
+# Utiliza la imagen de SQL Server
+FROM mcr.microsoft.com/mssql/server:2019-latest AS sqlserver
+
+# Configura variables de entorno para SQL Server
+ENV ACCEPT_EULA=Y
+ENV SA_PASSWORD='_q]]:WO#K|_):V,z'
+
+# Crea una red para que los contenedores puedan comunicarse
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app .
+ENV TZ America/Bogota
+
+# Configura SQL Server
+COPY --from=sqlserver /opt/mssql /opt/mssql
+
+# Configura la cadena de conexión
+ENV ConnectionStrings__DefaultConnection "Server=localhost,1433;Database=StackOverFlightErrorReportBd;User Id=sa;Password=_q]]:WO#K|_):V,z;Encrypt=False;"
+
+# Inicia SQL Server y la aplicación ASP.NET Core
+ENTRYPOINT ["/bin/bash", "-c", "/opt/mssql/bin/sqlservr & dotnet BancolombiaStarter.Backend.Api.dll"]

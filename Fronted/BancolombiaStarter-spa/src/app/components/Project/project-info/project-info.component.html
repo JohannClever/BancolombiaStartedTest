@@ -1,0 +1,115 @@
+<div class="website">
+      <div class="contenido">
+            <div class="nav-bar">
+                  <img class="logo-bancolombia-black-2-icon" alt="" src="../../../../assets/logo-bancolombia-black.svg">
+                  
+                  <div class="nav-bar-options">
+                        <div class="inicio">Inicio</div>
+                        <div class="inicio">Proyectos</div>
+                        <div class="financiar-btn">
+                              <div class="description-container">
+                                    <div class="opciones-de-financiacin">Opciones de financiación</div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+            <div class="content-container">
+                  <div class="main-info">
+                        <img class="image-container-icon" alt="" [src]="project.pictureUrl">
+                        
+                        <div class="info-container">
+                              <div class="project-info-container">
+                                    <div class="user">
+                                          <div class="user-info">
+                                                <div class="user-profile-image-container">
+                                                      <img class="user-profile-image-icon" alt="" [src]="user.pictureUrl">
+                                                      
+                                                </div>
+                                                <div class="user-name-container">
+                                                      <div class="internal-info">{{user.userName}}</div>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="title-container">
+                                          <b class="internal-info">{{ project.name }}</b>
+                                    </div>
+                                    <div class="separator">
+                                          <img class="separator-child" alt="" src="Vector 1.svg">
+                                          
+                                    </div>
+                                    <div class="catactersticas-section">
+                                          <div class="caractersticas">Características:</div>
+                                    </div>
+                                    <div class="caractersticas-container">
+                                          <div class="description-container">
+                                                <div class="financiacin-completa-o-container">
+                                                      <span>Financiación:</span>
+                                                      <span class="completa-o-grupal"> completa o grupal</span>
+                                                </div>
+                                          </div>
+                                          <div class="description-container">
+                                                <div class="financiacin-completa-o-container">
+                                                      <span>Meta:</span>
+                                                      <span class="completa-o-grupal"> {{ project.goal }}</span>
+                                                </div>
+                                          </div>
+                                          <div class="description-container">
+                                                <div class="financiacin-completa-o-container">
+                                                      <span>Faltante:</span>
+                                                      <span class="completa-o-grupal"> {{ project.pledged }}</span>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="separator">
+                                          <img class="separator-child" alt="" src="Vector 1.svg">
+                                          
+                                    </div>
+                                    <div class="catactersticas-section">
+                                          <div class="caractersticas">
+                                                <span>Descripción:</span>
+                                                <span class="completa-o-grupal"> {{ project.description }} </span>
+                                          </div>
+                                    </div>
+                                    <div class="financiar-proyecto-btn">
+                                          <div class="description-container">
+                                                <div class="opciones-de-financiacin">
+                                                  <button class="btn-finance" (click)="openFinanceCreate()">
+                                                        <div class="visualizar">Finaciar proyecto</div>
+                                                  </button>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="separator2">
+                        <img class="separator-child" alt="" src="Vector 1.svg">
+                        
+                  </div>
+                  <div class="community-comments">
+                        <div class="info-container1">
+                              <div class="project-info-container">
+                                    <div class="title-comments">
+                                          <b class="internal-info">¿Qué opinan otros usuarios de este proyecto?</b>
+                                    </div>
+                                    <div class="separator">
+                                          <img class="separator-child" alt="" src="Vector 1.svg">
+                                          
+                                    </div>
+                                    <div class="description-container">
+                                          <div class="caractersticas">Comentarios:</div>
+                                    </div>
+                                    <div class="comments-section">
+                                          <div class="description-container">
+                                                <div class="caractersticas">
+                                                      <span>saestrad</span>
+                                                      <span class="completa-o-grupal"> el arte de elaborar postres usando nuestra creatividad e imaginación, utilizando tanto las técnicas más antiguas como las más modernas e innovadoras. </span>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+  </div>

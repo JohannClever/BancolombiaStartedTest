@@ -1,0 +1,167 @@
+/* Contenedor de scroll */
+.scroll-container {
+    max-height: 600px; /* Ajusta la altura máxima según sea necesario */
+    overflow-y: auto; /* Habilita el scroll vertical */
+    overflow-x: hidden; /* Oculta el scroll horizontal */
+    padding: 20px; /* Añade espacio interno al contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+/* Personalización de la barra de desplazamiento vertical */
+.scroll-container::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de scroll vertical */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: #333; /* Color oscuro para la barra de scroll vertical */
+    border-radius: 10px; /* Bordes redondeados para la barra */
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Color claro para el fondo de la barra */
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Color más oscuro cuando se pasa el mouse */
+}
+
+/* Estilo de las tarjetas */
+.card {
+    width: 100%;
+    position: relative;
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.16);
+    border-radius: 16px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 8px 8px 16px;
+    box-sizing: border-box;
+    gap: 16px;
+    text-align: left;
+    font-size: 12px;
+    color: #222;
+    font-family: Inter;
+}
+
+/* Imagen en la tarjeta */
+.image-container-icon {
+    align-self: stretch;
+    border-radius: 8px;
+    max-width: 100%;
+    overflow: hidden;
+    height: 144px;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+/* Contenedor de información */
+.info-container {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+/* Contenedor de título */
+.title-container {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 8px; /* Ajusta el espacio entre la imagen y el título */
+}
+
+/* Título del proyecto */
+.mi-propia-repostera {
+    position: relative;
+    line-height: 16px;
+    font-weight: 500;
+}
+
+/* Separador entre elementos */
+.separator {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 8px 0px;
+}
+
+.separator-child {
+    align-self: stretch;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+
+/* Descripción del proyecto */
+.el-arte-de {
+    color: #58595b;
+}
+
+.descripcin-el-arte-container {
+    flex: 1;
+    position: relative;
+    line-height: 12px;
+}
+
+.description-container {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenedor del botón */
+.cta-container {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 10px;
+}
+
+/* Contenedor de descripción y botón */
+.description-container-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+    font-size: 8px;
+}
+
+/* Botón "Visualizar" */
+.btn-visualizar {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex; /* Asegura que el botón se alinee correctamente */
+    align-items: center; /* Centra verticalmente el texto */
+    justify-content: center; /* Centra horizontalmente el texto */
+}
+
+.btn-visualizar:hover {
+    opacity: 0.8; /* Opcional: Agrega un efecto visual cuando se pasa el mouse */
+}
+
+/* Contenedor de descripción del botón */
+.description-container-wrapper {
+    border-radius: 100px;
+    background-color: #fdda24;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrando el contenido */
+    justify-content: center; /* Centrando el contenido */
+    padding: 8px 12px;
+}

@@ -1,0 +1,21 @@
+<div [ngClass]="{'modal fade': !showModal , 'modal': showModal, 'd-none': !showModal}" class="modal" id="modal-default" style="display: block;">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <input type="hidden" id="commentSkillId" />
+          <div class="modal-header">
+              <h4 class="modal-title">{{modalMessage?.message}}</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true"></span>
+              </button>
+          </div>
+          <div class="modal-body">
+              
+          </div>
+          
+          <div [ngClass]="{'justify-content-between': !centerButtons , 'text-center arrange-buttons': centerButtons,  'modal-footer': !centerButtons}" >
+              <button  class="btn btn-primary btn-sm" onclick="" data-dismiss="modal" *ngFor="let button of buttons" (click)="button.action()">{{ button.name }}</button>
+          </div>
+      </div>
+
+  </div>
+</div>

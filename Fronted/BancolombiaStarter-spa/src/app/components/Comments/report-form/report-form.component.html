@@ -1,0 +1,54 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+      <div class="header-body">
+        <div class="row">
+          <div class="col-xl-8 col-md-12 col-lg-7 pb-4">
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12 col-lg-6 mx-auto">
+                <div class="card bg-secondary shadow">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-3" *ngIf="isAdmind">
+                                <div class="form-group">
+                                  <label class="form-control-label" for="selectService">Servicio</label>
+                                    <select id="selectService" class="form-control" [(ngModel)]="selectedService" [ngClass]="{'is-invalid': isService}">
+                                      <option *ngFor="let service of services" [value]="service.id">{{ service.name }}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                            <div class="form-group">
+                                <label class="form-control-label" for="selectStatus">Estado</label>
+                                <select id="selectStatus" class="form-control" [(ngModel)]="selectedStatus" [ngClass]="{'is-invalid': isStatus}">
+                                <option *ngFor="let status of statuses" [value]="status.id">{{ status.name }}</option>
+                                </select>
+                            </div>
+                            </div>
+                            <div class="col-lg-3" *ngIf="isAdmind">
+                            <div class="form-group" >
+                                <label class="form-control-label" for="selectUser">Usuario</label>
+                                <select id="selectUser" class="form-control" [(ngModel)]="selectedUser" [ngClass]="{'is-invalid': isUser}">
+                                <option *ngFor="let user of users" [value]="user.id">{{ user.fullName }}</option>
+                                </select>
+                            </div>
+                            </div>
+                            <div class="col-lg-3">
+                            <div class="form-group">
+                                <label class="form-control-label" for="inputObservation">Observacion</label>
+                                <input type="text" id="inputObservation" class="form-control" [(ngModel)]="inputObservation" [ngClass]="{'is-invalid': isObservation}">
+                            </div>
+                            </div>
+                        </div>
+                        <div class="text-right col-lg-12" align="right">
+                            <button type="button" class="btn  btn-dark my-4" (click)="save()">Guardar</button>
+                            <button type="button" class="btn btn-light  my-4" (click)="cancel()">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

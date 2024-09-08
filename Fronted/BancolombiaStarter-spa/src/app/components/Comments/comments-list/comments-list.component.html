@@ -1,0 +1,52 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8 mb-5">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row">
+        <div class="col-xl-8 col-md-12 col-lg-7 pb-4">
+          <h1 class="text-white">Visor de reportes</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-12 col-lg-6 mx-auto">
+          <app-search
+            [services]="services"
+            [statuses]="statuses"
+            [users]="users"
+            (searchEvent)="handleSearch($event)"
+          ></app-search>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt--7">
+  <div class="row">
+    <div class="col-xl-12 order-xl-1">
+      <div class="card bg-secondary shadow">
+        <app-grid
+        [gridName]="'Reporte de daños'"
+        [customHeaders]="customHeaders"
+        [columnData]="comments"
+        [totalRecords]="comments.length"
+        [hasActions] = "true"
+        [actions]="actions"
+        [hiddenColumns]="hideColumns"
+        ></app-grid>
+      </div>
+    </div>
+  </div>
+
+<div class="bottom">
+    <section class="footer">
+      <div class="justify-content-center">
+
+      </div>
+  </section>
+    <section class="footer-report">
+        <div class="d-flex justify-content-center">
+            <button class="btn btn btn-light btn-sm mr-2" (click)="exit()" *ngIf="!isAdmind">Salir</button>
+            <button  class="btn btn btn-dark btn-sm" (click)="create()">Crear reporte</button>
+        </div>
+    </section>
+</div>

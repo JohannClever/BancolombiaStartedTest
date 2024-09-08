@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container">
+      <a class="navbar-brand" [href]="redirect " style="display: flex; align-items: center;">
+        <div class="logo-container">
+          <div class="logo-icon"></div>
+          <span class="logo-text">BANCOLOMBIA STARTER</span>
+      </div>      
+      </a>
+      <button class="navbar-toggler border-0" type="button" (click)="isDropdownOpen = !isDropdownOpen">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" [ngClass]="{ 'show': isDropdownOpen }">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <div *ngIf="currentUser">
+                      <div class="dropdown nav-link">
+                          <i class="fas fa-plus-circle text-primary"></i>
+                          <button class="btn btn-outline-primary dropdown-toggle rounded-pill" type="button" (click)="navOnclick">
+                              {{currentUser.fullName}}
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-right" [ngClass]="{ 'show': isDropdownOpen }">
+                              <a class="dropdown-item text-primary" (click)="logOut()">Cerrar sesión</a>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
