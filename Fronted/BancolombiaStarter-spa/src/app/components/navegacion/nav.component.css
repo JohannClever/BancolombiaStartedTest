@@ -1,0 +1,68 @@
+.navbar {
+    background-color: #f8f9fa;
+}
+
+.navbar-brand {
+    color: #005bac !important;
+}
+
+.navbar-toggler {
+    border-color: #005bac;
+}
+
+.btn-outline-primary {
+    color: #005bac;
+    border-color: #005bac;
+}
+
+.btn-outline-primary:hover {
+    background-color: #005bac;
+    color: #ffffff;
+}
+
+.dropdown-item {
+    color: #005bac;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+    color: #005bac;
+}
+
+.bancolombia-text {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #000; /* Color negro */
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: 0.05rem;
+}
+
+.navbar-brand img {
+    filter: grayscale(100%) invert(100%);
+}
+
+
+logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #000 30%, transparent 30%),
+                linear-gradient(225deg, #000 30%, transparent 30%);
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: 0.05rem;
+}
+

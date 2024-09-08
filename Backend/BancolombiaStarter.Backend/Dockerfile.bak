@@ -1,0 +1,44 @@
+# Utiliza la imagen base de ASP.NET Core
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+WORKDIR /app
+EXPOSE 54615
+EXPOSE 44398
+
+# Utiliza la imagen del SDK de .NET Core para construir la aplicación
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /src
+COPY ["./StackOverFlight.ErrorReport.Api/StackOverFlight.ErrorReport.Api.csproj", "StackOverFlight.ErrorReport.Api/"]
+COPY ["./StackOverFlight.ErrorReport.Infrastructure/StackOverFlight.ErrorReport.Infrastructure.csproj", "StackOverFlight.ErrorReport.Infrastructure/"]
+COPY ["./StackOverFlight.ErrorReport.Domain/StackOverFlight.ErrorReport.Domain.csproj", "StackOverFlight.ErrorReport.Domain/"]
+COPY ["./StackOverFlight.ErrorReport.Db/StackOverFlight.ErrorReport.Db.sqlproj", "StackOverFlight.ErrorReport.Db/"]
+
+RUN dotnet restore "StackOverFlight.ErrorReport.Api/StackOverFlight.ErrorReport.Api.csproj"
+COPY . .
+WORKDIR "/src/StackOverFlight.ErrorReport.Api"
+RUN dotnet build "StackOverFlight.ErrorReport.Api.csproj" -c Release -o /app/build
+
+# Publica la aplicación
+FROM build AS publish
+RUN dotnet publish "StackOverFlight.ErrorReport.Api.csproj" -c Release -o /app/publish
+
+# Configura la imagen final con la aplicación y SQL Server
+FROM mcr.microsoft.com/mssql/server:2019-latest AS sqlserver
+
+# Configura variables de entorno para SQL Server
+ENV ACCEPT_EULA=Y
+ENV SA_PASSWORD=YourStrongPassword
+
+# Crea una red para que los contenedores puedan comunicarse
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app .
+ENV TZ America/Bogota
+
+# Configura SQL Server
+COPY --from=sqlserver /opt/mssql /opt/mssql
+
+# Inicia SQL Server y la aplicación ASP.NET Core
+ENTRYPOINT ["dotnet", "StackOverFlight.ErrorReport.Api.dll"]
+
+# Comando para iniciar SQL Server (Este se iniciará antes de la aplicación ASP.NET Core)
+CMD /bin/bash -c "/opt/mssql/bin/sqlservr & dotnet StackOverFlight.ErrorReport.Api.dll"

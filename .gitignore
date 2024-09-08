@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/Backend/BancolombiaStarter.Backend/.vs
+/Backend/BancolombiaStarter.Backend/BancolombiaStarter.Backend.Api/bin/Debug/net6.0
+/Backend/BancolombiaStarter.Backend/BancolombiaStarter.Backend.Db/bin/Debug
+/Backend/BancolombiaStarter.Backend/BancolombiaStarter.Backend.Db/obj/Debug
+/Backend/BancolombiaStarter.Backend/BancolombiaStarter.Backend.Domain/bin/Debug/net6.0
+/Backend/BancolombiaStarter.Backend/BancolombiaStarter.Backend.Domain/obj
+/Backend/BancolombiaStarter.Backend/BancolombiaStarter.Backend.Api/obj
+/Backend/BancolombiaStarter.Backend/BancolombiaStarter.Backend.Infrastructure/bin/Debug/net6.0
+/Backend/BancolombiaStarter.Backend/BancolombiaStarter.Backend.Infrastructure/obj

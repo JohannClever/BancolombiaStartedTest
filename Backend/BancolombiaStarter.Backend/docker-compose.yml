@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  StackOverFlight.ErrorReport.Api:
+    image: ${DOCKER_REGISTRY-}error-report
+    build:
+      context: .
+      dockerfile: StackOverFlight.ErrorReport.Api/Dockerfile

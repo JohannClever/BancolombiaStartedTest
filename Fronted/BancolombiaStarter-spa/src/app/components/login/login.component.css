@@ -1,0 +1,19 @@
+.card-header {
+    background-color: #005bac;
+    color: #ffffff;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #005bac;
+    border-color: #005bac;
+}
+
+.btn-primary:hover {
+    background-color: #004a94;
+    border-color: #004a94;
+}
+
+.invalid-feedback {
+    color: #d9534f;
+}

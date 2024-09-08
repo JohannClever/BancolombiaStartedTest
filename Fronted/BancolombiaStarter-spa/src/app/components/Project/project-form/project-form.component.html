@@ -1,0 +1,45 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+      <div class="header-body">
+          <div class="row">
+              <div class="col-xl-12 col-lg-6 mx-auto">
+                  <div class="card bg-secondary shadow">
+                      <div class="card-body">
+                          <div class="row">
+                              <div class="col-lg-3">
+                                  <div class="form-group">
+                                      <label class="form-control-label" for="projectName">Nombre del proyecto</label>
+                                      <input type="text" id="projectName" class="form-control" [(ngModel)]="projectInfo.name">
+                                  </div>
+                              </div>
+                              <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="projectDescription">Descripción</label>
+                                    <textarea id="projectDescription" class="form-control" [(ngModel)]="projectInfo.description" rows="5" style="resize: vertical; overflow-y: auto;"></textarea>
+                                </div>
+                            </div>
+                            
+                              <div class="col-lg-3">
+                                  <div class="form-group">
+                                      <label class="form-control-label" for="projectGoal">Meta</label>
+                                      <input type="number" id="projectGoal" class="form-control" [(ngModel)]="projectInfo.goal">
+                                  </div>
+                              </div>
+                              <div class="col-lg-3">
+                                  <div class="form-group">
+                                      <label class="form-control-label" for="imageFile">Subir imagen</label>
+                                      <input type="file" id="imageFile" class="form-control" (change)="onFileSelected($event)">
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="text-right col-lg-12">
+                              <button type="button" class="btn btn-dark my-4" (click)="save()">Guardar</button>
+                              <button type="button" class="btn btn-light my-4" (click)="cancel()">Cancelar</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

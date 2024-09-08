@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  agavalpagocreditodigital.verificarorden:
+    image: ${DOCKER_REGISTRY-}agavalpagocreditodigitalverificarorden
+    build:
+      context: .
+      dockerfile: AgavalPagoCreditoDigital.VerificarOrden/Dockerfile
