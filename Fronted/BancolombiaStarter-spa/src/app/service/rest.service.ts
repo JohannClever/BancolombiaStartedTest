@@ -57,6 +57,8 @@ export class RestService {
       );
   }
   put<T>(url: string, data: any, token: boolean = true, showError: boolean = true): Observable<T> {
+    console.log("Entro al put");
+    console.log(url);
     this.loadingSubject.next(true);
     return this.http.put<T>(url, data)
       .pipe(

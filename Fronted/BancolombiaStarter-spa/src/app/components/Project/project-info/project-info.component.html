@@ -3,35 +3,37 @@
             <div class="nav-bar">
                   <img class="logo-bancolombia-black-2-icon" alt="" src="../../../../assets/logo-bancolombia-black.svg">
                   
-                  <div class="nav-bar-options">
-                        <div class="inicio">Inicio</div>
-                        <div class="inicio">Proyectos</div>
+                  <div class="nav-bar-options" *ngIf="isMyProject">
                         <div class="financiar-btn">
                               <div class="description-container">
-                                    <div class="opciones-de-financiacin">Opciones de financiación</div>
+                                    <button class="btn-finance" (click)="Update()">
+                                          <div class="opciones-de-financiacin">
+                                                <div class="visualizar">Editar</div>
+                                          </div>
+                                    </button>
                               </div>
                         </div>
                   </div>
             </div>
             <div class="content-container">
                   <div class="main-info">
-                        <img class="image-container-icon" alt="" [src]="project.pictureUrl">
+                        <img class="image-container-icon" alt="" [src]="projectInfoData.projectPicture">
                         
                         <div class="info-container">
                               <div class="project-info-container">
                                     <div class="user">
                                           <div class="user-info">
                                                 <div class="user-profile-image-container">
-                                                      <img class="user-profile-image-icon" alt="" [src]="user.pictureUrl">
+                                                      <img class="user-profile-image-icon" alt="" [src]="projectInfoData.userPicture">
                                                       
                                                 </div>
                                                 <div class="user-name-container">
-                                                      <div class="internal-info">{{user.userName}}</div>
+                                                      <div class="internal-info">{{projectInfoData.userName}}</div>
                                                 </div>
                                           </div>
                                     </div>
                                     <div class="title-container">
-                                          <b class="internal-info">{{ project.name }}</b>
+                                          <b class="internal-info">{{ projectInfoData.projectName }}</b>
                                     </div>
                                     <div class="separator">
                                           <img class="separator-child" alt="" src="Vector 1.svg">
@@ -50,13 +52,13 @@
                                           <div class="description-container">
                                                 <div class="financiacin-completa-o-container">
                                                       <span>Meta:</span>
-                                                      <span class="completa-o-grupal"> {{ project.goal }}</span>
+                                                      <span class="completa-o-grupal"> {{ projectInfoData.goal }}</span>
                                                 </div>
                                           </div>
                                           <div class="description-container">
                                                 <div class="financiacin-completa-o-container">
                                                       <span>Faltante:</span>
-                                                      <span class="completa-o-grupal"> {{ project.pledged }}</span>
+                                                      <span class="completa-o-grupal"> {{ projectInfoData.pledged }}</span>
                                                 </div>
                                           </div>
                                     </div>
@@ -67,12 +69,12 @@
                                     <div class="catactersticas-section">
                                           <div class="caractersticas">
                                                 <span>Descripción:</span>
-                                                <span class="completa-o-grupal"> {{ project.description }} </span>
+                                                <span class="completa-o-grupal"> {{ projectInfoData.description }} </span>
                                           </div>
                                     </div>
-                                    <div class="financiar-proyecto-btn">
+                                    <div class="financiar-proyecto-btn" *ngIf="!isMyProject">
                                           <div class="description-container">
-                                                <div class="opciones-de-financiacin">
+                                                <div class="opciones-de-financiacin" >
                                                   <button class="btn-finance" (click)="openFinanceCreate()">
                                                         <div class="visualizar">Finaciar proyecto</div>
                                                   </button>

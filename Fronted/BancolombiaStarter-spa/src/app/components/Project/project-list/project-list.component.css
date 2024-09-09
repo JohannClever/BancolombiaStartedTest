@@ -1,167 +1,124 @@
 /* Contenedor de scroll */
 .scroll-container {
-    max-height: 600px; /* Ajusta la altura máxima según sea necesario */
-    overflow-y: auto; /* Habilita el scroll vertical */
-    overflow-x: hidden; /* Oculta el scroll horizontal */
-    padding: 20px; /* Añade espacio interno al contenedor */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    max-height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
-/* Personalización de la barra de desplazamiento vertical */
+/* Personalización de la barra de desplazamiento */
 .scroll-container::-webkit-scrollbar {
-    width: 8px; /* Ancho de la barra de scroll vertical */
+    width: 8px;
 }
 
 .scroll-container::-webkit-scrollbar-thumb {
-    background-color: #333; /* Color oscuro para la barra de scroll vertical */
-    border-radius: 10px; /* Bordes redondeados para la barra */
+    background-color: #333;
+    border-radius: 10px;
 }
 
 .scroll-container::-webkit-scrollbar-track {
-    background-color: #f1f1f1; /* Color claro para el fondo de la barra */
-}
-
-.scroll-container::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Color más oscuro cuando se pasa el mouse */
+    background-color: #f1f1f1;
 }
 
 /* Estilo de las tarjetas */
 .card {
     width: 100%;
+    max-width: 300px;
+    height: 400px; /* Altura fija para todas las tarjetas */
     position: relative;
     box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.16);
     border-radius: 16px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 8px 8px 16px;
+    padding: 16px;
     box-sizing: border-box;
     gap: 16px;
-    text-align: left;
-    font-size: 12px;
-    color: #222;
-    font-family: Inter;
+    margin-bottom: 16px;
 }
 
 /* Imagen en la tarjeta */
 .image-container-icon {
-    align-self: stretch;
     border-radius: 8px;
     max-width: 100%;
-    overflow: hidden;
     height: 144px;
-    flex-shrink: 0;
     object-fit: cover;
-}
-
-/* Contenedor de información */
-.info-container {
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
 }
 
 /* Contenedor de título */
 .title-container {
-    align-self: stretch;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    margin-top: 8px; /* Ajusta el espacio entre la imagen y el título */
+    margin-top: 8px;
 }
 
 /* Título del proyecto */
 .mi-propia-repostera {
-    position: relative;
-    line-height: 16px;
+    font-size: 18px;
     font-weight: 500;
-}
-
-/* Separador entre elementos */
-.separator {
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 8px 0px;
-}
-
-.separator-child {
-    align-self: stretch;
-    position: relative;
-    max-width: 100%;
-    overflow: hidden;
-    max-height: 100%;
+    line-height: 1.4;
+    color: #222;
 }
 
 /* Descripción del proyecto */
+.description-container-parent {
+    flex: 1;
+    overflow-y: auto; /* Habilita el scroll si el texto es muy largo */
+    max-height: 100px; /* Limita la altura de la descripción */
+}
+
+/* Estilo de la descripción con scrollbar */
+.description-container-parent::-webkit-scrollbar {
+    width: 6px;
+}
+
+.description-container-parent::-webkit-scrollbar-thumb {
+    background-color: #c0c0c0;
+    border-radius: 10px;
+}
+
+.description-container-parent::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-left: 1px solid #c0c0c0;
+    border-right: 1px solid #c0c0c0;
+}
+
 .el-arte-de {
     color: #58595b;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
 .descripcin-el-arte-container {
-    flex: 1;
-    position: relative;
-    line-height: 12px;
-}
-
-.description-container {
-    align-self: stretch;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Contenedor del botón */
-.cta-container {
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
-    font-size: 10px;
-}
-
-/* Contenedor de descripción y botón */
-.description-container-parent {
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 16px;
-    font-size: 8px;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
 /* Botón "Visualizar" */
+.cta-container {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+}
+
+.description-container-wrapper {
+    border-radius: 100px;
+    background-color: #fdda24;
+    padding: 8px 12px;
+}
+
 .btn-visualizar {
     background-color: transparent;
     border: none;
     padding: 0;
     cursor: pointer;
-    display: flex; /* Asegura que el botón se alinee correctamente */
-    align-items: center; /* Centra verticalmente el texto */
-    justify-content: center; /* Centra horizontalmente el texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-visualizar:hover {
-    opacity: 0.8; /* Opcional: Agrega un efecto visual cuando se pasa el mouse */
-}
-
-/* Contenedor de descripción del botón */
-.description-container-wrapper {
-    border-radius: 100px;
-    background-color: #fdda24;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centrando el contenido */
-    justify-content: center; /* Centrando el contenido */
-    padding: 8px 12px;
+    opacity: 0.8;
 }

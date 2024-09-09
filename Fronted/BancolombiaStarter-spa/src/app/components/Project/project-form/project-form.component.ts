@@ -40,7 +40,7 @@ export class ProjectFormComponent implements OnInit {
   selectedUser: any = "";
   
 
-  isMyProject:boolean;
+  isEdit:boolean = false;
 
   registerId: number = 0;
   inputDescription: string = '';
@@ -48,11 +48,8 @@ export class ProjectFormComponent implements OnInit {
   isAdmind = false;
 
   ngOnInit(): void {
-   debugger;
+    this.isEdit = false;
     this.getDataFromRouter();
-    if(!this.isAdmind ){
-      this.isMyProject = true;
-    }
   }
 
   private getDataFromRouter() {
@@ -63,6 +60,7 @@ export class ProjectFormComponent implements OnInit {
 
     if(history.state.operation =="edit" && history.state.id)
     {
+        this.isEdit = true;
         this.registerId = history.state.id;
         this.projectInfo = history.state.project;
      }
@@ -80,11 +78,7 @@ export class ProjectFormComponent implements OnInit {
     console.log(this.registerId);
     if (this.ValidateInputs()) {
       if (this.registerId > 0) {
-        let updateData: UdateProject = {
-          id: this.registerId,
-          description: this.projectInfo.description
-        };
-        this.handlePut(updateData);
+        this.handlePut();
       }
       else {
         this.handlePost(); 
@@ -116,17 +110,22 @@ cancel() {
     this.modalService.hideModalWindow();
   }
 
-  private handlePut(data : any) {
-    this.PutReport(data).subscribe({
+  private handlePut() {
+    let updateData: UdateProject = {
+      id: this.registerId,
+      description: this.projectInfo.description
+    };
+
+    this.PutProject(updateData).subscribe({
       next: (result) => {
         if (result) {
-          this.router.navigate(['/projects'] );
+          this.router.navigate(['/projects/info'], {state:{project:this.projectInfo} });
         }
       }
     });
   }
     
-  private PutReport(data : any) {
+  private PutProject(data : any) {
    return this.projectService.update(data);
   }
 
