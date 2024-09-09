@@ -12,3 +12,6 @@
 /Backend/BancolombiaStarter.Backend/BancolombiaStarter.Backend.Api/obj
 /Backend/BancolombiaStarter.Backend/BancolombiaStarter.Backend.Infrastructure/bin/Debug/net6.0
 /Backend/BancolombiaStarter.Backend/BancolombiaStarter.Backend.Infrastructure/obj
+/Backend/BancolombiaStarter.Backend/BancolombiaStarter.Backend.Api/bin/Release/net6.0
+/Backend/BancolombiaStarter.Backend/BancolombiaStarter.Backend.Domain/bin/Release/net6.0
+/Backend/BancolombiaStarter.Backend/BancolombiaStarter.Backend.Infrastructure/bin/Release/net6.0
