@@ -1,0 +1,361 @@
+.financiar-btn {
+    border-radius: 100px;
+    background-color: #fdda24;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 8px 24px;
+    color: #222;
+}
+.nav-bar-options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+}
+.nav-bar {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.instrucciones {
+    position: relative;
+    line-height: 24px;
+}
+.title-container {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.hemos-seleccionado-algunos {
+    flex: 1;
+    position: relative;
+    line-height: 24px;
+}
+.description-section {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #58595b;
+}
+.separator-child {
+    align-self: stretch;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.separator {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 8px 0px;
+}
+.user-profile-image-icon {
+    width: 32px;
+    position: relative;
+    border-radius: 50%;
+    height: 32px;
+    object-fit: cover;
+}
+.user-profile-image-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.user-name-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.user-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.user {
+    width: 147px;
+    border-radius: 100px;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 4px 16px 4px 4px;
+    box-sizing: border-box;
+}
+.caractersticas {
+    flex: 1;
+    position: relative;
+    line-height: 24px;
+    font-weight: 500;
+}
+.catactersticas-section {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+.completa-o-grupal {
+    color: #58595b;
+}
+.financiacin-completa-o-container {
+    flex: 1;
+    position: relative;
+    line-height: 16px;
+}
+.caractersticas-container {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+    font-size: 14px;
+}
+.separator-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 24px;
+}
+.project-info-container {
+    width: 505px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 24px;
+}
+.title-container3 {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.user-profile-image-icon1 {
+    width: 24px;
+    position: relative;
+    border-radius: 50%;
+    height: 24px;
+    object-fit: cover;
+}
+.user1 {
+    border-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 16px;
+}
+.ttulo-usuario {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+}
+.caracterstica-1-parent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.caracterstica-14 {
+    align-self: stretch;
+    height: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.fecha-de-financiacin-container {
+    position: relative;
+    line-height: 16px;
+}
+.caracterstica-1-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    text-align: right;
+}
+.caractersticas-container1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.descripcin-el-arte-container1 {
+    flex: 1;
+    position: relative;
+    line-height: 20px;
+}
+.ideas {
+    align-self: stretch;
+    border-radius: 24px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 24px;
+    gap: 24px;
+}
+.ideas-similares1 {
+    align-self: stretch;
+    border-radius: 32px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 16px;
+    gap: 16px;
+    font-size: 18px;
+}
+.project-info-container1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 24px;
+}
+.project-info-container-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 40px;
+}
+.description-container {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.financiar-proyecto-btn {
+    border-radius: 100px;
+    background-color: #fdda24;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 8px 24px;
+    font-size: 16px;
+}
+.main-info {
+    width: 1090px;
+    border-radius: 24px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 40px;
+    z-index: 0;
+}
+.scroll-child {
+    align-self: stretch;
+    width: 2px;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    z-index: 0;
+}
+.scroll-item {
+    width: 2px;
+    position: absolute;
+    margin: 0 !important;
+    top: 7.5px;
+    left: calc(50% - 0px);
+    max-width: 100%;
+    overflow: hidden;
+    height: 160px;
+    z-index: 1;
+}
+.scroll {
+    width: 14px;
+    margin: 0 !important;
+    position: absolute;
+    top: 44px;
+    left: 1218px;
+    border-radius: 100px;
+    background-color: #fff;
+    height: 612px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px;
+    box-sizing: border-box;
+    gap: 8px;
+    z-index: 1;
+}
+.content-container {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    gap: 40px;
+    font-size: 20px;
+    color: #222;
+}
+.contenido {
+    width: 1312px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 80px;
+}
+.website-result {
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px 64px 80px;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 16px;
+    color: #58595b;
+    font-family: Inter;
+}
+

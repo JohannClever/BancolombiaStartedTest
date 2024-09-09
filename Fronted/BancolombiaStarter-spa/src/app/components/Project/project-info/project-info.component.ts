@@ -89,10 +89,17 @@ projectInfoData: ProjectInfoData = {
      this.projectInfoData.projectName = this.project.name;
   }
 
-  Update(){
+  update(){
     this.router.navigate(['/projects/form'], {state: { 
       operation:"edit" , id: this.project.id , project: this.project
        } });
+  }
+
+  sugeestion(){
+    this.router.navigate(['/projects/suggestion'], {state: { 
+       id: this.project.id , projectInfo:this.projectInfoData
+       } });
+   
   }
   
 }

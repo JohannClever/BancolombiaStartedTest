@@ -1,15 +1,21 @@
 ﻿using BancolombiaStarter.Backend.Domain.Entities.Generic;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BancolombiaStarter.Backend.Domain.Entities
 {
+    public enum ProjectStatus
+    {
+        Created= 0,
+        OnProccess = 1,
+        Financed = 2
+    }
     public class Projects : EntityBase<long>
     {
+        public Projects()
+        {
+            Status = ProjectStatus.Created;
+        }
+
         [Required]
         [MaxLength(100)]
         public string Name { get; set; }
@@ -24,6 +30,9 @@ namespace BancolombiaStarter.Backend.Domain.Entities
         public string PictureUrl { get; set; }
         [Required]
         public string UserId { get; set; }
+
+        public ProjectStatus Status { get; set; }
+        public DateTime? FinancedDate { get; set; }
 
         public List<Comments> Comments { get; set; }
         public List<Finance> Finances { get; set; }

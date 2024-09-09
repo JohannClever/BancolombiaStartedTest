@@ -1,12 +1,19 @@
 <div class="website">
       <div class="contenido">
             <div class="nav-bar">
-                  <img class="logo-bancolombia-black-2-icon" alt="" src="../../../../assets/logo-bancolombia-black.svg">
+                  <div class="logo-bancolombia-black-2-icon" alt="" src=""></div>
                   
                   <div class="nav-bar-options" *ngIf="isMyProject">
+                        <div class="inicio">                                   
+                               <button class="btn-finance" (click)="sugeestion()">
+                                    <div class="opciones-de-financiacin">
+                                          <div class="visualizar">IA Sugerencias</div>
+                                    </div>
+                             </button>
+                       </div>
                         <div class="financiar-btn">
                               <div class="description-container">
-                                    <button class="btn-finance" (click)="Update()">
+                                    <button class="btn-finance" (click)="update()">
                                           <div class="opciones-de-financiacin">
                                                 <div class="visualizar">Editar</div>
                                           </div>

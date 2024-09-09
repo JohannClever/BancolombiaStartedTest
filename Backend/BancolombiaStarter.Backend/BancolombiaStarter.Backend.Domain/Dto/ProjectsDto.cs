@@ -38,6 +38,8 @@ namespace BancolombiaStarter.Backend.Domain.Dto
     {
         [Required]
         public long Id { get; set; }
+        public string Name { get; set; }
+        public decimal? Goal { get; set; }
         public string Description { get; set; }
     }
 

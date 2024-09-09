@@ -1,30 +1,3 @@
-.logo-bancolombia-black-2-icon {
-    width: 217px;
-    position: relative;
-    height: 61px;
-    overflow: hidden;
-    flex-shrink: 0;
-}
-.inicio {
-    position: relative;
-    line-height: 24px;
-    font-weight: 500;
-}
-.opciones-de-financiacin {
-    position: relative;
-    line-height: 24px;
-    font-weight: 600;
-}
-.financiar-btn {
-    border-radius: 100px;
-    background-color: #fdda24;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 8px 24px;
-    color: #222;
-}
 .nav-bar-options {
     display: flex;
     flex-direction: row;
@@ -37,7 +10,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 850px;
+    gap: 800px;
 }
 .image-container-icon {
     align-self: stretch;

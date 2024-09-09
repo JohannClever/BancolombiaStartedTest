@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace BancolombiaStarter.Backend.Domain.Dto
 {
+
     public class OpenAiRequest
     {
         public string Prompt { get; set; }
+    }
+    public class OpenAiSuggestionProjectRequest
+    {
+        public List<long> SuggestionProjectsId { get; set; }
+        public long ProjectId { get; set; }
     }
 
     public class OpenAiResponse
