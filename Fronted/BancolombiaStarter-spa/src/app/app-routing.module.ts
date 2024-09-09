@@ -11,6 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './helpers/auth.guard';
 import { ProjectInfoComponent } from './components/Project/project-info/project-info.component';
 import { ProjectSuggestionsComponent } from './components/Project/project-suggestions/project-suggestions.component';
+import { ProjectSuggestionsResultComponent } from './components/Project/project-suggestions-result/project-suggestions-result.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,12 @@ const routes: Routes = [
 
   }, 
   {
+    path : 'projects/suggestion/result',
+    component : ProjectSuggestionsResultComponent,
+    canActivate: [AuthGuard]
+
+  }, 
+  {
     path :'comments/list',
     component: CommentsListComponent,
     canActivate: [AuthGuard]
@@ -48,6 +55,8 @@ const routes: Routes = [
     redirectTo: '/login',
     pathMatch: 'full'
   }
+
+  
   
 
 ];

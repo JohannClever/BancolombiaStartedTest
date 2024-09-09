@@ -1,3 +1,4 @@
+using Azure;
 using BancolombiaStarter.Backend.Domain.Dto;
 using BancolombiaStarter.Backend.Domain.Services;
 using BancolombiaStarter.Backend.Domain.Services.Interfaces;
@@ -87,8 +88,14 @@ namespace BancolombiaStarter.Backend.Api.Controllers
                         The 'Name' should reflect the nature and appeal of the project, 'Description' should be engaging and descriptive, and 'Goal' should be realistic based on the project's context.
                     ";
             // Llamar al servicio de OpenAI para obtener las sugerencias
-            var result = await _openAiService.AskToIaAsync(prompt);
+            var response = await _openAiService.AskToIaAsync(prompt);
+            var json = response.Choices.FirstOrDefault()?.Text;
+            ProjectsResponse result = null;
+            if (json != null && json.Contains("\"Name\""))
+            {
+                result = JsonConvert.DeserializeObject<ProjectsResponse>(json);
 
+            }
             // Retornar el resultado de las sugerencias
             return Ok(result);
         }

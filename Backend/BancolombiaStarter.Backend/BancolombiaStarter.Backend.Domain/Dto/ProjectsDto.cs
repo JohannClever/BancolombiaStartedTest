@@ -3,6 +3,18 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BancolombiaStarter.Backend.Domain.Dto
 {
+
+    public class ProjectsResponse
+    {
+        [Required]
+        [MaxLength(100)]
+        public string Name { get; set; }
+        [Required]
+        public string Description { get; set; }
+        [Required]
+        public decimal Goal { get; set; }
+        public DateTime CreationOn { get; set; }
+    }
     public class ProjectsDto
     {
         public long Id { get; set; }

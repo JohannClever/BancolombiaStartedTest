@@ -19,12 +19,6 @@ import { ProjectInfoData } from 'src/app/model/ProjectInfo';
   styleUrls: ['./project-suggestions.component.css']
 })
 export class ProjectSuggestionsComponent implements OnInit {
-getSuggestion() {
-throw new Error('Method not implemented.');
-}
-openFinanceCreate() {
-throw new Error('Method not implemented.');
-}
 
 
 projectInfoForSuggestionData: ProjectInfoData = {
@@ -34,24 +28,21 @@ projectInfoForSuggestionData: ProjectInfoData = {
   pledged: 0,
   projectPicture: "",
   userPicture: "",
-  projectName:  ""
+  projectName:  "",
 };
 
   constructor(private projectService: ProjectService, 
-    private userService:UserService,
-    private authenticationService: AuthenticationService,
     private router: Router, 
-    private cdr: ChangeDetectorRef,
-    private modalService: ModalService) {
+) {
       
      }
 
   projects: Project[] = [];
-  user: User;
   currentProject: ProjectInfoData;
   isMyProject: boolean = false ;
   isAdmind = false;
   projectId: number = 0;
+  userId: number = 0;
 
   ngOnInit(): void {
    this.getDataFromRouter();  
@@ -66,6 +57,7 @@ projectInfoForSuggestionData: ProjectInfoData = {
 
      this.projectInfoForSuggestionData = history.state.projectInfo;
      this.projectId =  history.state.id;
+     this.userId = history.state.userId;
   }
 
 getProjectsToSugget() {
@@ -73,12 +65,21 @@ getProjectsToSugget() {
       next: (result) => {
         if (result) {
           this.projects = result;
+          console.log(result);
         }
       }
     });
   }
 
-  Update(){
-  }
+  getSuggestion() {
+    let projectIds: number[] = this.projects.map(project => project.id);
+    this.router.navigate(['/projects/suggestion/result'], {state: { 
+      id: this.projectId , 
+      projectIds:projectIds,
+      projectInfo:this.projectInfoForSuggestionData,
+      userId: this.userId
+    }
+       });
+    }
   
 }

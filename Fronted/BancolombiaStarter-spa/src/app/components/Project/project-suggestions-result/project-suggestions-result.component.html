@@ -1,0 +1,80 @@
+<div class="website-ai">
+        <div class="contenido">
+                  <div class="content-container">
+                            <div class="main-info">
+                                      <img class="image-container-icon" alt="" [src]="projectInfoForSuggestionData.projectPicture">
+                                      
+                                      <div class="info-container">
+                                                <div class="project-info-container">
+                                                          <div class="user">
+                                                                    <div class="user-info">
+                                                                              <div class="user-profile-image-container">c
+                                                                                        <img class="user-profile-image-icon" alt="" [src]="projectInfoForSuggestionData.userPicture">
+                                                                                        
+                                                                              </div>
+                                                                              <div class="user-name-container">
+                                                                                        <div class="jbolivar">{{projectInfoForSuggestionData.userName}}</div>
+                                                                              </div>
+                                                                    </div>
+                                                          </div>
+                                                          <div class="title-container">
+                                                                    <b class="jbolivar">{{projectInfoForSuggestionData.projectName}}</b>
+                                                          </div>
+                                                          <div class="separator">
+                                                                    <img class="separator-child" alt="" src="Vector 1.svg">
+                                                                    
+                                                          </div>
+                                                          <div class="catactersticas-section">
+                                                                    <div class="caractersticas">Características:</div>
+                                                          </div>
+                                                          <div class="caractersticas-container">
+                                                                    <div class="description-container">
+                                                                              <div class="financiacin-completa-o-container">
+                                                                                        <span>Financiación:</span>
+                                                                                        <span class="completa-o-grupal"> Pendiente</span>
+                                                                              </div>
+                                                                    </div>
+                                                                    <div class="description-container">
+                                                                              <div class="financiacin-completa-o-container">
+                                                                                        <span>Meta:</span>
+                                                                                        <span class="completa-o-grupal"> {{projectInfoForSuggestionData.goal}}</span>
+                                                                              </div>
+                                                                    </div>
+                                                          </div>
+                                                          <div class="separator">
+                                                                    <img class="separator-child" alt="" src="Vector 1.svg">
+                                                                    
+                                                          </div>
+                                                          <div class="catactersticas-section">
+                                                                    <div class="descripcin-el-arte-container">
+                                                                              <span>Descripción:</span>
+                                                                              <span class="completa-o-grupal">{{projectInfoForSuggestionData.description}}. </span>
+                                                                    </div>
+                                                          </div>
+                                                          <div class="btn-main-parent">
+                                                                    <div class="btn-main">
+                                                                              <div class="description-container">
+                                                                                        <div class="opciones-de-financiacin">
+
+                                                                                             <button class="btn-finance" (click)="update()">
+                                                                                                        <div class="visualizar">Actualiza</div>
+                                                                                            </button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                              </div>
+                                                                    </div>
+                                                                    <div class="btn-main1">
+                                                                              <div class="description-container">
+                                                                                        <div class="opciones-de-financiacin">
+                                                                                                <button class="btn-finance" (click)="close()">
+                                                                                                        <div class="visualizar">Cerar</div>
+                                                                                            </button>
+                                                                                        </div>
+                                                                              </div>
+                                                                    </div>
+                                                          </div>
+                                                </div>
+                                      </div>
+                            </div>
+                  </div>
+        </div>

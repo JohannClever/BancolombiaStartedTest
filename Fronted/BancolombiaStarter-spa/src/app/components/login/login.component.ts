@@ -24,8 +24,9 @@ export class LoginComponent implements OnInit, OnDestroy {
       private authenticationService: AuthenticationService
   ) { 
       // redirect to home if already logged in
-      if (this.authenticationService.currentUserValue) { 
-          this.router.navigate(['/services']);
+      let currentUser = this.authenticationService.getCurentUser();
+      if (currentUser) { 
+          this.router.navigate(['/projects']);
       }
   }
 

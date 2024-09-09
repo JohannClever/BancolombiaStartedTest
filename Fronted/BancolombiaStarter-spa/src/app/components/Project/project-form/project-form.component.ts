@@ -32,7 +32,7 @@ export class ProjectFormComponent implements OnInit {
 
   
   users: User[];
-  services: Project;
+  project: Project;
   statuses: Status[];
 
   selectedService: any = null;
@@ -63,6 +63,7 @@ export class ProjectFormComponent implements OnInit {
         this.isEdit = true;
         this.registerId = history.state.id;
         this.projectInfo = history.state.project;
+        this.project = history.state.project;
      }
   }
 
@@ -113,13 +114,22 @@ cancel() {
   private handlePut() {
     let updateData: UdateProject = {
       id: this.registerId,
-      description: this.projectInfo.description
+      name: this.projectInfo.name,
+      description: this.projectInfo.description,
+      goal: this.projectInfo.goal
     };
 
     this.PutProject(updateData).subscribe({
       next: (result) => {
         if (result) {
-          this.router.navigate(['/projects/info'], {state:{project:this.projectInfo} });
+          let projectUpdated = {
+            id: this.registerId,
+            name: this.projectInfo.name,
+            description: this.projectInfo.description,
+            goal: this.projectInfo.goal,
+            pictureUrl: this.project.pictureUrl
+          };
+          this.router.navigate(['/projects/info'], {state:{project:projectUpdated} });
         }
       }
     });

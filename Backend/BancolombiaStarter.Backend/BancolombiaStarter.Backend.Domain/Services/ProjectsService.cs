@@ -115,7 +115,7 @@ namespace BancolombiaStarter.Backend.Domain.Services
             var projectJson = JsonConvert.SerializeObject(baseProject);
 
             return $@"
-                    Compare the following projects to the base project, and determine if they are discussing the same topic or something similar, including synonyms in the titles and descriptions.
+                    Compare the following projects to the base project, and determine if they are discussing the same topic or something similar, check it has synonyms in the name and descriptions.
 
                     Base project:
                     {projectJson}
@@ -162,14 +162,6 @@ namespace BancolombiaStarter.Backend.Domain.Services
                 return batchProjects.Where(p => similarProjectIds.Contains(p.Id)).ToList();
             }
         }
-
-        // Clase para deserializar la respuesta con estructura JSON
-        public class SimilarProjectsResponse
-        {
-            [JsonProperty("SimilarProjectIds")]
-            public List<long> SimilarProjectIds { get; set; }
-        }
-
 
         public async Task<long> InsertAsync(Projects entity, IFormFile picture)
         {

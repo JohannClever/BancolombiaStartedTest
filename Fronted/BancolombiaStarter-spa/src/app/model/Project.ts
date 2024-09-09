@@ -13,6 +13,14 @@ export interface Project {
     creationOn: Date;
 }
 
+export interface ProjectResponseIA {
+    name: string,
+    description: string,
+    goal: number,
+    creationOn: Date;
+}
+
+
 export interface CreateProject {
     name: string;
     description: string;
@@ -23,5 +31,7 @@ export interface CreateProject {
 
 export interface UdateProject {
     id: number,
-    description: string
+    name: string,
+    description: string,
+    goal: number
 }

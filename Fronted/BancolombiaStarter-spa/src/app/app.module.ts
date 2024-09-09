@@ -21,6 +21,7 @@ import { SearchProjectComponent } from './components/Project/search-project/sear
 import { ProjectFormComponent } from './components/Project/project-form/project-form.component';
 import { ProjectInfoComponent } from './components/Project/project-info/project-info.component';
 import { ProjectSuggestionsComponent } from './components/Project/project-suggestions/project-suggestions.component';
+import { ProjectSuggestionsResultComponent } from './components/Project/project-suggestions-result/project-suggestions-result.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ProjectSuggestionsComponent } from './components/Project/project-sugges
     SearchProjectComponent,
     ProjectFormComponent,
     ProjectInfoComponent,
-    ProjectSuggestionsComponent ],
+    ProjectSuggestionsComponent,
+    ProjectSuggestionsResultComponent ],
   imports: [
     BrowserModule,
     AppRoutingModule,

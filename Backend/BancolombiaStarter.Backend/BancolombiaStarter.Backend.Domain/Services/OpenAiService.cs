@@ -23,11 +23,11 @@ namespace BancolombiaStarter.Backend.Domain.Services
                 var result = await _api.Completions.CreateCompletionAsync(new CompletionRequest
                 {
                     Prompt = prompt,
-                    MaxTokens = 150,
-                    Temperature = 0.7,
-                    TopP = 1.0, // Agregado para mayor control de la generación
-                    FrequencyPenalty = 0.0, // Agregado para evitar penalización por frecuencia
-                    PresencePenalty = 0.0 // Agregado para evitar penalización por presencia
+                    MaxTokens = 200, // Ajusta si necesitas más tokens
+                    Temperature = 0.0, // Establecer temperatura baja para resultados consistentes
+                    TopP = 0.5, // Limita las posibles palabras para mayor consistencia
+                    FrequencyPenalty = 0.0,
+                    PresencePenalty = 0.0
                 });
 
                 var firstCompletion = result.Completions.FirstOrDefault();
@@ -50,11 +50,16 @@ namespace BancolombiaStarter.Backend.Domain.Services
                     }).ToArray()
                 };
             }
+            catch (HttpRequestException ex) // Para manejar errores de conexión
+            {
+                throw new ApplicationException("Error de red al solicitar datos a OpenAI", ex);
+            }
             catch (Exception ex)
             {
-                // Manejo de errores apropiado
+                // Manejo de errores general
                 throw new ApplicationException("Error al solicitar datos a OpenAI", ex);
             }
         }
+
     }
 }

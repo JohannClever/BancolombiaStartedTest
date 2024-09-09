@@ -100,7 +100,7 @@ projectInfoData: ProjectInfoData = {
 
   sugeestion(){
     this.router.navigate(['/projects/suggestion'], {state: { 
-       id: this.project.id , projectInfo:this.projectInfoData
+       id: this.project.id , projectInfo:this.projectInfoData, userId: this.project.userId
        } });
    
   }
