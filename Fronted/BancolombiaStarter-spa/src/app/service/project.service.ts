@@ -26,6 +26,10 @@ export class ProjectService {
     return this.restService.get(`${environment.baseUrl}Project/${id}`);
   }
 
+  getProjectsToSugget(id: number):Observable<Project[]> {
+    return this.restService.get(`${environment.baseUrl}Project/GetProjectSuggestions/${id}`);
+  }
+
   save(project: FormData){
     return this.restService.post(`${environment.baseUrl}Project/PostProjects`, project);
 
@@ -48,7 +52,11 @@ export class ProjectService {
       pledged: data.pledged,
       backersCount: data.backersCount,
       pictureUrl: data.PictureUrl,
-      userId: data.UserId
+      userId: data.UserId,
+      userName: data.UserName,
+      userPicture: data.UserPicture,
+      financedDate: data.financedDate,  // El símbolo '?' indica que es opcional, equivalente a un DateTime?
+      creationOn: data.creationOn
       // Asigna otras propiedades de data a las propiedades correspondientes de User
     };
   }

@@ -19,6 +19,9 @@ import { ProjectInfoData } from 'src/app/model/ProjectInfo';
   styleUrls: ['./project-suggestions.component.css']
 })
 export class ProjectSuggestionsComponent implements OnInit {
+getSuggestion() {
+throw new Error('Method not implemented.');
+}
 openFinanceCreate() {
 throw new Error('Method not implemented.');
 }
@@ -48,9 +51,11 @@ projectInfoForSuggestionData: ProjectInfoData = {
   currentProject: ProjectInfoData;
   isMyProject: boolean = false ;
   isAdmind = false;
+  projectId: number = 0;
 
   ngOnInit(): void {
-   this.getDataFromRouter();   
+   this.getDataFromRouter();  
+   this.getProjectsToSugget(); 
   }
 
    
@@ -58,8 +63,19 @@ projectInfoForSuggestionData: ProjectInfoData = {
   private getDataFromRouter() {
     if (!(history.state && history.state.projectInfo))   
       this.router.navigate(['/projects'] );
-    console.log(history.state.projectInfo);
+
      this.projectInfoForSuggestionData = history.state.projectInfo;
+     this.projectId =  history.state.id;
+  }
+
+getProjectsToSugget() {
+    this.projectService.getProjectsToSugget(this.projectId ).subscribe({
+      next: (result) => {
+        if (result) {
+          this.projects = result;
+        }
+      }
+    });
   }
 
   Update(){

@@ -68,20 +68,19 @@
                                               </div>
                                               <div class="ideas-similares1">
                                                 <div class="scroll-container">
-                                                      <div class="col-md-4" *ngFor="let project of projects; let i = index">
-                                                            <div class="ideas">
+                                                            <div class="ideas" *ngFor="let project of projects; let i = index">
                                                                   <div class="ttulo-usuario">
                                                                           <div class="title-container3">
-                                                                                  <div class="opciones-de-financiacin">Mi propia repostería</div>
+                                                                                  <div class="opciones-de-financiacin">{{project.name}}</div>
                                                                           </div>
                                                                           <div class="user1">
                                                                                   <div class="user-info">
                                                                                           <div class="user-profile-image-container">
-                                                                                                  <img class="user-profile-image-icon1" alt="" src="user-profile-image.png">
+                                                                                                  <img class="user-profile-image-icon1" alt="" [src]="project.userPicture">
                                                                                                   
                                                                                           </div>
                                                                                           <div class="user-name-container">
-                                                                                                  <div class="instrucciones">lisseth</div>
+                                                                                                  <div class="instrucciones">{{project.userName}}</div>
                                                                                           </div>
                                                                                   </div>
                                                                           </div>
@@ -103,7 +102,7 @@
                                                                                                   <div class="description-container">
                                                                                                           <div class="financiacin-completa-o-container">
                                                                                                                   <span>Capital:</span>
-                                                                                                                  <span class="completa-o-grupal"> 15.000.000</span>
+                                                                                                                  <span class="completa-o-grupal">{{project.goal}}</span>
                                                                                                           </div>
                                                                                                   </div>
                                                                                           </div>
@@ -111,12 +110,12 @@
                                                                                                   <div class="caracterstica-14">
                                                                                                           <div class="financiacin-completa-o-container">
                                                                                                                   <span>Fecha de creación:</span>
-                                                                                                                  <span class="completa-o-grupal"> 08/09/2024</span>
+                                                                                                                  <span class="completa-o-grupal"> {{project.creationOn}}</span>
                                                                                                           </div>
                                                                                                   </div>
                                                                                                   <div class="fecha-de-financiacin-container">
                                                                                                           <span>Fecha de financiación:</span>
-                                                                                                          <span class="completa-o-grupal"> 08/07/2024</span>
+                                                                                                          <span class="completa-o-grupal"> {{project.financedDate}}</span>
                                                                                                   </div>
                                                                                           </div>
                                                                                   </div>
@@ -136,14 +135,21 @@
                                                                    
                                                       </div>
 
-                                                </div>
-
+                                                      <div class="opciones-de-financiacin">
+                                                            <button class="btn-finance" (click)="getProjectsToSugget()">
+                                                                        <div class="visualizar">Refrescar</div>
+                                                            </button>
+                                                      </div>
                                           </div>
                                     </div>
                               </div>
                               <div class="financiar-proyecto-btn">
                                       <div class="description-container">
-                                              <div class="opciones-de-financiacin">Generar sugerencia</div>
+                                              <div class="opciones-de-financiacin">
+                                                <button class="btn-finance" (click)="getSuggestion()">
+                                                            <div class="visualizar">Generar sugerencia</div>
+                                                </button>
+                                                </div>
                                       </div>
                               </div>
                       </div>

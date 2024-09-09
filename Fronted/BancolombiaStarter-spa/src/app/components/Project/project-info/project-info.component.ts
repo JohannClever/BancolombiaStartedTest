@@ -71,7 +71,10 @@ projectInfoData: ProjectInfoData = {
 
   private checkIsMyProject(){
     let currentUser  = this.authenticationService.getCurentUser();
+    console.log(currentUser.id);
+    console.log(this.project.userId);
     this.isMyProject = currentUser.id == this.project.userId;
+    console.log(this.isMyProject);
     this.cdr.detectChanges();  // Obligamos a Angular a detectar cambios
   }
    

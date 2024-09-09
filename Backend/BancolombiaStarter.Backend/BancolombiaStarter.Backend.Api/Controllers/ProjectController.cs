@@ -9,6 +9,8 @@ using BancolombiaStarter.Backend.Domain.Entities;
 using BancolombiaStarter.Backend.Domain.Services.Interfaces;
 using BancolombiaStarter.Backend.Infrastructure.Authorization;
 using BancolombiaStarter.Backend.Api.Extension;
+using BancolombiaStarter.Backend.Infrastructure.Authorization.Entities;
+using System.Linq;
 
 namespace BancolombiaStarter.Backend.Api.Controllers
 {
@@ -21,15 +23,18 @@ namespace BancolombiaStarter.Backend.Api.Controllers
         private IProjectService _projectService;
         private readonly IMapper _mapper;
         private readonly JwtService _jwtService;
+        private readonly UserManager<ApplicationUser> _userManager;
 
         public ProjectController(
             IProjectService projectService,
             IMapper mapper,
-            JwtService jwtService)
+            JwtService jwtService,
+            UserManager<ApplicationUser> userManager)
         {
             _projectService = projectService;
             _mapper = mapper;
             _jwtService = jwtService;
+            _userManager = userManager;
         }
 
         [HttpGet("GetAllProjects")]
@@ -158,14 +163,21 @@ namespace BancolombiaStarter.Backend.Api.Controllers
             {
                 var projects = await _projectService.GetProjectsToSuggestions(id);
 
-                // Mapeo a DTO si es necesario
                 var projectsDto = _mapper.Map<List<ProjectsDto>>(projects);
 
                 if (projectsDto == null || !projectsDto.Any())
                 {
                     return NotFound(new { Message = "No se encontraron proyectos similares." });
                 }
+                var usersId = projectsDto.Select(x => x.UserId).Distinct().ToList();
+                List<ApplicationUser> users = _userManager.Users.Where(x => usersId.Contains( x.Id)).ToList();
 
+                foreach (var dto in projectsDto)
+                {
+                    var user = users.First(x => x.Id == dto.UserId);
+                    dto.UserPicture = user.PictureUrl;
+                    dto.UserName = user.UserName;
+                }
                 return Ok(projectsDto);
             }
             catch (Exception ex)

@@ -19,6 +19,10 @@ namespace BancolombiaStarter.Backend.Domain.Dto
         public decimal Pledged { get; set; }
         public int BackersCount { get; set; }
         public string UserId { get; set; }
+        public string UserName { get; set; }
+        public string UserPicture { get; set; }
+        public DateTime? FinancedDate { get; set; }
+        public DateTime CreationOn { get; set; }
     }
 
 

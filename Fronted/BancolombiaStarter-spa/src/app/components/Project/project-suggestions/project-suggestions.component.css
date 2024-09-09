@@ -359,3 +359,17 @@
     font-family: Inter;
 }
 
+.btn-finance {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex; /* Asegura que el botón se alinee correctamente */
+    align-items: center; /* Centra verticalmente el texto */
+    justify-content: center; /* Centra horizontalmente el texto */
+}
+
+.btn-finance:hover {
+    opacity: 0.8; /* Opcional: Agrega un efecto visual cuando se pasa el mouse */
+}
+

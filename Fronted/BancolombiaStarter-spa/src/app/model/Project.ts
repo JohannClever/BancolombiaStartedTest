@@ -6,7 +6,11 @@ export interface Project {
     pledged: number,
     backersCount: number
     pictureUrl: string,
-    userId: string
+    userId: string,
+    userName: string,
+    userPicture:string,
+    financedDate?: Date;  // El símbolo '?' indica que es opcional, equivalente a un DateTime?
+    creationOn: Date;
 }
 
 export interface CreateProject {
