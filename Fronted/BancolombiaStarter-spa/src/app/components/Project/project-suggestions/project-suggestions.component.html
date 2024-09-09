@@ -1,0 +1,169 @@
+<div class="website-result">
+      <div class="contenido">
+              <div class="content-container">
+                      <div class="main-info">
+                              <div class="project-info-container-parent">
+                                      <div class="project-info-container">
+                                              <div class="title-container">
+                                                      <b class="instrucciones">Instrucciones</b>
+                                              </div>
+                                              <div class="description-section">
+                                                      <div class="hemos-seleccionado-algunos">Hemos seleccionado algunos proyectos acorde a tu descripción y título, para que te beneficies del recorrido de otros creadores que ya pasaron por la etapas de recaudo, optimizando el tiempo entre la creación del proyecto y su financiamiento.</div>
+                                              </div>
+                                              <div class="separator-parent">
+                                                      <div class="separator">
+                                                              <img class="separator-child" alt="" src="Vector 1.svg">
+                                                              
+                                                      </div>
+                                                      <div class="user">
+                                                              <div class="user-info">
+                                                                      <div class="user-profile-image-container">
+                                                                              <img class="user-profile-image-icon" alt="" [src]="projectInfoForSuggestionData.userPicture">
+                                                                              
+                                                                      </div>
+                                                                      <div class="user-name-container">
+                                                                              <div class="instrucciones">{{projectInfoForSuggestionData.userName}}</div>
+                                                                      </div>
+                                                              </div>
+                                                      </div>
+                                                      <div class="title-container">
+                                                              <b class="instrucciones">{{projectInfoForSuggestionData.projectName}}</b>
+                                                      </div>
+                                                      <div class="separator">
+                                                              <img class="separator-child" alt="" src="Vector 1.svg">
+                                                              
+                                                      </div>
+                                                      <div class="catactersticas-section">
+                                                              <div class="caractersticas">Características:</div>
+                                                      </div>
+                                                      <div class="caractersticas-container">
+                                                              <div class="description-container">
+                                                                      <div class="financiacin-completa-o-container">
+                                                                              <span>Financiación:</span>
+                                                                              <span class="completa-o-grupal"> completa o grupal</span>
+                                                                      </div>
+                                                              </div>
+                                                              <div class="description-container">
+                                                                      <div class="financiacin-completa-o-container">
+                                                                              <span>Meta:</span>
+                                                                              <span class="completa-o-grupal"> {{projectInfoForSuggestionData.goal}}</span>
+                                                                      </div>
+                                                              </div>
+                                                      </div>
+                                                      <div class="separator">
+                                                              <img class="separator-child" alt="" src="Vector 1.svg">
+                                                              
+                                                      </div>
+                                                      <div class="catactersticas-section">
+                                                              <div class="hemos-seleccionado-algunos">
+                                                                      <span>Descripción:</span>
+                                                                      <span class="completa-o-grupal"> {{projectInfoForSuggestionData.description}}</span>
+                                                              </div>
+                                                      </div>
+                                              </div>
+                                      </div>
+                                      <div class="project-info-container1">
+                                              <div class="title-container">
+                                                      <b class="instrucciones">Ideas similares</b>
+                                              </div>
+                                              <div class="ideas-similares1">
+                                                <div class="scroll-container">
+                                                            <div class="ideas" *ngFor="let project of projects; let i = index">
+                                                                  <div class="ttulo-usuario">
+                                                                          <div class="title-container3">
+                                                                                  <div class="opciones-de-financiacin">{{project.name}}</div>
+                                                                          </div>
+                                                                          <div class="user1">
+                                                                                  <div class="user-info">
+                                                                                          <div class="user-profile-image-container">
+                                                                                                  <img class="user-profile-image-icon1" alt="" [src]="project.userPicture">
+                                                                                                  
+                                                                                          </div>
+                                                                                          <div class="user-name-container">
+                                                                                                  <div class="instrucciones">{{project.userName}}</div>
+                                                                                          </div>
+                                                                                  </div>
+                                                                          </div>
+                                                                  </div>
+                                                                  <div class="caractersticas-container">
+                                                                          <div class="separator">
+                                                                                  <img class="separator-child" alt="" src="Vector 1.svg">
+                                                                                  
+                                                                          </div>
+                                                                          <div class="caractersticas-container1">
+                                                                                  <div class="nav-bar">
+                                                                                          <div class="caracterstica-1-parent">
+                                                                                                  <div class="description-container">
+                                                                                                          <div class="financiacin-completa-o-container">
+                                                                                                                  <span>Estado:</span>
+                                                                                                                  <span class="completa-o-grupal"> financiado</span>
+                                                                                                          </div>
+                                                                                                  </div>
+                                                                                                  <div class="description-container">
+                                                                                                          <div class="financiacin-completa-o-container">
+                                                                                                                  <span>Capital:</span>
+                                                                                                                  <span class="completa-o-grupal">{{project.goal}}</span>
+                                                                                                          </div>
+                                                                                                  </div>
+                                                                                          </div>
+                                                                                          <div class="caracterstica-1-group">
+                                                                                                  <div class="caracterstica-14">
+                                                                                                          <div class="financiacin-completa-o-container">
+                                                                                                                  <span>Fecha de creación:</span>
+                                                                                                                  <span class="completa-o-grupal"> {{project.creationOn}}</span>
+                                                                                                          </div>
+                                                                                                  </div>
+                                                                                                  <div class="fecha-de-financiacin-container">
+                                                                                                          <span>Fecha de financiación:</span>
+                                                                                                          <span class="completa-o-grupal"> {{project.financedDate}}</span>
+                                                                                                  </div>
+                                                                                          </div>
+                                                                                  </div>
+                                                                          </div>
+                                                                          <div class="separator">
+                                                                                  <img class="separator-child" alt="" src="Vector 1.svg">
+                                                                                  
+                                                                          </div>
+                                                                          <div class="description-container">
+                                                                                  <div class="descripcin-el-arte-container1">
+                                                                                          <span>Descripción:</span>
+                                                                                          <span class="completa-o-grupal"> {{project.description}} </span>
+                                                                                  </div>
+                                                                          </div>
+                                                                  </div>
+                                                                </div>
+                                                                   
+                                                      </div>
+
+                                                      <div class="opciones-de-financiacin">
+                                                            <button class="btn-finance" (click)="getProjectsToSugget()">
+                                                                        <div class="visualizar">Refrescar</div>
+                                                            </button>
+                                                      </div>
+                                          </div>
+                                    </div>
+                              </div>
+                              <div class="financiar-proyecto-btn">
+                                      <div class="description-container">
+                                              <div class="opciones-de-financiacin">
+                                                <button class="btn-finance" (click)="getSuggestion()">
+                                                            <div class="visualizar">Generar sugerencia</div>
+                                                </button>
+                                                </div>
+                                      </div>
+                              </div>
+                      </div>
+                      <div class="scroll">
+                              <img class="scroll-child" alt="" src="Vector 2.svg">
+                              
+                              <img class="scroll-item" alt="" src="Vector 3.svg">
+                              
+                      </div>
+              </div>
+              
+              
+              
+      </div>
+</div>
+
+

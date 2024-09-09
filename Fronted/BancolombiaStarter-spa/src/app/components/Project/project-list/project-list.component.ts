@@ -4,6 +4,7 @@ import { ProjectService } from '../../../service/project.service';
 import { Router } from '@angular/router';
 import { Project } from 'src/app/model/Project';
 import { ProjectFilter } from 'src/app/model/ProjectFilter';
+import { AuthenticationService } from 'src/app/service/authentication.service';
 @Component({
   selector: 'app-services-list',
   templateUrl: './project-list.component.html',
@@ -15,7 +16,8 @@ export class ProjectListComponent implements OnInit {
   isAdmind = false;
   constructor(
     private projectService: ProjectService,
-    private router: Router
+    private router: Router,
+    private authenticationService: AuthenticationService
     ) { }
 
   ngOnInit() {
@@ -51,6 +53,7 @@ create(){
 }
 
 exit() {
+  this.authenticationService.logout();
   this.router.navigate(['/']);
   }
 

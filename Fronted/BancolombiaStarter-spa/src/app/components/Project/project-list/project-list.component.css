@@ -1,28 +1,4 @@
-/* Contenedor de scroll */
-.scroll-container {
-    max-height: 600px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 20px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-}
 
-/* Personalización de la barra de desplazamiento */
-.scroll-container::-webkit-scrollbar {
-    width: 8px;
-}
-
-.scroll-container::-webkit-scrollbar-thumb {
-    background-color: #333;
-    border-radius: 10px;
-}
-
-.scroll-container::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
-}
 
 /* Estilo de las tarjetas */
 .card {

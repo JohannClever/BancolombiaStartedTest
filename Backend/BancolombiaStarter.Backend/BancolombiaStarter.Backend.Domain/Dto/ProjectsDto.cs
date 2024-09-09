@@ -3,6 +3,18 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BancolombiaStarter.Backend.Domain.Dto
 {
+
+    public class ProjectsResponse
+    {
+        [Required]
+        [MaxLength(100)]
+        public string Name { get; set; }
+        [Required]
+        public string Description { get; set; }
+        [Required]
+        public decimal Goal { get; set; }
+        public DateTime CreationOn { get; set; }
+    }
     public class ProjectsDto
     {
         public long Id { get; set; }
@@ -19,6 +31,10 @@ namespace BancolombiaStarter.Backend.Domain.Dto
         public decimal Pledged { get; set; }
         public int BackersCount { get; set; }
         public string UserId { get; set; }
+        public string UserName { get; set; }
+        public string UserPicture { get; set; }
+        public DateTime? FinancedDate { get; set; }
+        public DateTime CreationOn { get; set; }
     }
 
 
@@ -38,6 +54,8 @@ namespace BancolombiaStarter.Backend.Domain.Dto
     {
         [Required]
         public long Id { get; set; }
+        public string Name { get; set; }
+        public decimal? Goal { get; set; }
         public string Description { get; set; }
     }
 

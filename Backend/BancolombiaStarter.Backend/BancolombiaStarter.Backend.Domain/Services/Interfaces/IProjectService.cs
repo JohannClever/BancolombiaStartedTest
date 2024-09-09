@@ -12,6 +12,8 @@ namespace BancolombiaStarter.Backend.Domain.Services.Interfaces
             Func<IQueryable<Projects>, IOrderedQueryable<Projects>>? orderBy = null,
             bool isTracking = false,
             params Expression<Func<Projects, object>>[] includeObjectProperties);
+
+        Task<List<Projects>> GetProjectsToSuggestions(long id);
         Task<bool> UpdateAsync(Projects entity);
         Task<bool> DeleteAsync(long id);
     }

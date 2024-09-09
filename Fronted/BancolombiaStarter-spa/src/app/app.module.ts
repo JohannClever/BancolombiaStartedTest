@@ -20,6 +20,8 @@ import { ModalService } from './service/modal.service';
 import { SearchProjectComponent } from './components/Project/search-project/search-project.component';
 import { ProjectFormComponent } from './components/Project/project-form/project-form.component';
 import { ProjectInfoComponent } from './components/Project/project-info/project-info.component';
+import { ProjectSuggestionsComponent } from './components/Project/project-suggestions/project-suggestions.component';
+import { ProjectSuggestionsResultComponent } from './components/Project/project-suggestions-result/project-suggestions-result.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { ProjectInfoComponent } from './components/Project/project-info/project-
     ModalComponent,
     SearchProjectComponent,
     ProjectFormComponent,
-    ProjectInfoComponent ],
+    ProjectInfoComponent,
+    ProjectSuggestionsComponent,
+    ProjectSuggestionsResultComponent ],
   imports: [
     BrowserModule,
     AppRoutingModule,
