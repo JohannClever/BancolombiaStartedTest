@@ -18,7 +18,8 @@ private corsHeaders: any;
    }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    debugger;
+    console.log("Entro al interceptor");
+    console.log(request.url);
     const token = this.authenticationService.getToken();
     console.log(token);
     const isLoggedIn = token !== '';
@@ -34,10 +35,11 @@ private corsHeaders: any;
     request = request.clone({
         setHeaders: headers
     });
+
+    console.log("Estos son los parametros");
     console.log(headers);
     console.log(request.url);
     console.log(request.body);
-    request.url
     return next.handle(request);
 }
 }

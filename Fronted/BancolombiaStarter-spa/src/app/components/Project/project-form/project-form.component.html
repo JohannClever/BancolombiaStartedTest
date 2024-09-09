@@ -6,7 +6,7 @@
                   <div class="card bg-secondary shadow">
                       <div class="card-body">
                           <div class="row">
-                              <div class="col-lg-3">
+                              <div class="col-lg-3" *ngIf="!isEdit">
                                   <div class="form-group">
                                       <label class="form-control-label" for="projectName">Nombre del proyecto</label>
                                       <input type="text" id="projectName" class="form-control" [(ngModel)]="projectInfo.name">
@@ -19,13 +19,13 @@
                                 </div>
                             </div>
                             
-                              <div class="col-lg-3">
+                              <div class="col-lg-3" *ngIf="!isEdit">
                                   <div class="form-group">
-                                      <label class="form-control-label" for="projectGoal">Meta</label>
+                                      <label class="form-control-label" for="projectGoal" >Meta</label>
                                       <input type="number" id="projectGoal" class="form-control" [(ngModel)]="projectInfo.goal">
                                   </div>
                               </div>
-                              <div class="col-lg-3">
+                              <div class="col-lg-3" *ngIf="!isEdit">
                                   <div class="form-group">
                                       <label class="form-control-label" for="imageFile">Subir imagen</label>
                                       <input type="file" id="imageFile" class="form-control" (change)="onFileSelected($event)">

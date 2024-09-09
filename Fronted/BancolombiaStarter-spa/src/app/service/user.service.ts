@@ -13,7 +13,7 @@ export class UserService {
         return this.restService.get<User[]>(`${environment.baseUrl}User/GetUsers`);
     }
 
-    getUserByName(id:string):Observable<User> {
+    getUserById(id:string):Observable<User> {
         return this.restService.get<User>(`${environment.baseUrl}User/GetUsers/${id}`);
     }
 }

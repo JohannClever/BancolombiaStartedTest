@@ -54,6 +54,7 @@ export class AuthenticationService {
   }
 
   getToken(): string {
+    console.log("Entro al token");
     const currentUser = this.storageService.getFromStorage('currentUser');
     console.log(currentUser);
     if (currentUser) {

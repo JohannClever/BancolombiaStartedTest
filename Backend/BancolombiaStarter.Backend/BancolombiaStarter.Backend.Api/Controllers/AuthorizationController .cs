@@ -57,7 +57,7 @@ namespace BancolombiaStarter.Backend.Api.Controllers
 
                 if (_jwtValidationService.ValidateToken(jwtToken))
                 {
-                    return Ok(new { Token = jwtToken, FullName = user.FullName, Rols = string.Join(", ", roles) });
+                    return Ok(new { id= userId, Token = jwtToken, FullName = user.FullName, Rols = string.Join(", ", roles) });
                 }
                 else
                 {

@@ -27,17 +27,16 @@ export class ProjectService {
   }
 
   save(project: FormData){
-    console.log(project);  
     return this.restService.post(`${environment.baseUrl}Project/PostProjects`, project);
 
   }
 
   delete(id: string) {
-    return this.restService.delete(`$${environment.baseUrl}Project/${id}`);
+    return this.restService.delete(`$${environment.baseUrl}Project/DeleteProjects/${id}`);
   }
 
   update(updated: Project) {
-    return this.restService.put(`$${environment.baseUrl}Project}`, updated);
+    return this.restService.put(`${environment.baseUrl}Project/PutProjects`, updated);
   }
 
   mapTo(data: any): Project {
